@@ -1,8 +1,12 @@
 {{ partial "header.html" . }}
-{{ range $index, $page := (.Paginate (where (where .Site.RegularPages "Type" "posts") ".Params.hidden" "!=" "true" )).Pages }}
-{{ if ne $index 0 }}
-{{ end }}
-{{ .Render "li" }}
-{{ end }}
-{{ partial "pagination.html" .Paginator }}
+{{ partial "frontpage.html" . }}
+<br>
+<!-- hide posts behind a link -->
+<h2 class="c-title p-tag-title"><a href='/posts'>Posts</a></h2>
+<!-- {{ range $index, $page := (.Paginate (where (where .Site.RegularPages "Type" "posts") ".Params.hidden" "!=" "true" )).Pages }} -->
+<!-- {{ if ne $index 0 }} -->
+<!-- {{ end }} -->
+<!-- {{ .Render "li" }} -->
+<!-- {{ end }} -->
+<!-- {{ partial "pagination.html" .Paginator }} -->
 {{ partial "footer.html" . }}
